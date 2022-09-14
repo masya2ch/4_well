@@ -1,33 +1,113 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <title>Регистрация</title>
-</head>
-<body>
+@extends('index')
 
-<form class="mt-4" action="{{route('register')}}" method="POST">
-    <h2 class="mb-3">Регистрация</h2>
-    @if(session()->has('errorSuccess'))
-        <h3>Операция регистрации успешно выполнена</h3>
-    @endif
-    @csrf
-    <input class="form-control size" type="text" name="Login" placeholder="Ваш логин"><br>
-    @error('Login') <p>{{$message}}</p> @enderror
-    <input class="form-control" type="Password" name="Password" placeholder="Ваш пароль"><br>
-    @error('Password') <p>{{$message}}</p> @enderror
-    <input class="form-control" type="Password" name="Password_confirmation" placeholder="Повторите пароль"><br>
-    @error('Password') <p>{{$message}}</p> @enderror
-    <input class="form-control" type="Text" name="FullName" placeholder="Полное имя"><br>
-    @error('Name') <p>{{$message}}</p> @enderror
-    <input class="form-control" type="Email" name="Email" placeholder="Email"><br>
-    <input class="form-control" type="text" name="Age" placeholder="Ваш возраст"><br>
-    <input class="form-control" type="text" name="Address" placeholder="Место проживания"><br>
-    <input type="Submit" name="Зарегестрироваться"><br>
-</form>
-</body>
-</html>
+@yield('title', 'Страница Регистрации')
+
+@section('content')
+    <div class="container p-4">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-6">
+                <form class="mt-4" action="{{ route('register') }}" method="POST">
+                    <h2 class="mb-3">Регистрация</h2>
+                    @if(session()->has('success'))
+                        <div class="alert alert-success">Операция регистрации успешно выполнена</div>
+                    @endif
+                    @csrf
+                    <div class="mb-3">
+                        <label for="inputLogin" class="form-label">Ваш логин</label>
+                        <input type="Text"
+                               class="form-control @error('Login') is-invalid @enderror"
+                               id="inputLogin"
+                               name="Login"
+                               aria-describedby="invalidLogin">
+                        @error('Login')
+                        <div id="invalidLogin" class="invalid-feedback" >
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPassword" class="form-label">Ваш пароль</label>
+                        <input type="Password"
+                               class="form-control @error('Password') is-invalid @enderror"
+                               id="inputPassword"
+                               name="Password"
+                               aria-describedby="invalidPassword">
+                        @error('Password')
+                        <div id="invalidPassword" class="invalid-feedback" >
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPasswordConfirmation" class="form-label">Повторите пароль</label>
+                        <input type="Password"
+                               class="form-control @error('Password_confirmation') is-invalid @enderror"
+                               id="inputPasswordConfirmation"
+                               name="Password_confirmation"
+                               aria-describedby="invalidPasswordConformation">
+                        @error('Password_confirmation')
+                        <div id="invalidPasswordConformation" class="invalid-feedback" >
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputFullName" class="form-label">Ваше имя</label>
+                        <input type="Text"
+                               class="form-control @error('FullName') is-invalid @enderror"
+                               id="inputFullName"
+                               name="FullName"
+                               aria-describedby="invalidFullName">
+                        @error('FullName')
+                        <div id="invalidFullName" class="invalid-feedback" >
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Ваш email</label>
+                        <input type="Email"
+                               class="form-control @error('Email') is-invalid @enderror"
+                               id="inputEmail"
+                               name="Email"
+                               aria-describedby="invalidEmail">
+                        @error('Email')
+                        <div id="invalidEmail" class="invalid-feedback" >
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputAge" class="form-label">Ваш возраст</label>
+                        <input type="Text"
+                               class="form-control @error('Age') is-invalid @enderror"
+                               id="inputAge"
+                               name="Age"
+                               aria-describedby="invalidAge">
+                        @error('Age')
+                        <div id="invalidAge" class="invalid-feedback" >
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputAddress" class="form-label">Ваш адрес проживания</label>
+                        <input type="Text"
+                               class="form-control @error('Address') is-invalid @enderror"
+                               id="inputAddress"
+                               name="Address"
+                               aria-describedby="invalidAddress">
+                        @error('Address')
+                        <div id="invalidAddress" class="invalid-feedback" >
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn btn-primary">Регистрация</button>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+@endsection
