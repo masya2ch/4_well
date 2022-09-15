@@ -16,11 +16,11 @@
                     <div class="mb-3">
                         <label for="inputLogin" class="form-label">Ваш логин</label>
                         <input type="Text"
-                               class="form-control @error('Login') is-invalid @enderror"
+                               class="form-control @error('login') is-invalid @enderror"
                                id="inputLogin"
-                               name="Login"
+                               name="login"
                                aria-describedby="invalidLogin">
-                        @error('Login')
+                        @error('login')
                         <div id="invalidLogin" class="invalid-feedback" >
                             {{ $message }}
                         </div>
@@ -29,11 +29,11 @@
                     <div class="mb-3">
                         <label for="inputPassword" class="form-label">Ваш пароль</label>
                         <input type="Password"
-                               class="form-control @error('Password') is-invalid @enderror"
+                               class="form-control @error('password') is-invalid @enderror"
                                id="inputPassword"
-                               name="Password"
+                               name="password"
                                aria-describedby="invalidPassword">
-                        @error('Password')
+                        @error('password')
                         <div id="invalidPassword" class="invalid-feedback" >
                             {{ $message }}
                         </div>
@@ -42,11 +42,11 @@
                     <div class="mb-3">
                         <label for="inputPasswordConfirmation" class="form-label">Повторите пароль</label>
                         <input type="Password"
-                               class="form-control @error('Password_confirmation') is-invalid @enderror"
+                               class="form-control @error('password_confirmation') is-invalid @enderror"
                                id="inputPasswordConfirmation"
-                               name="Password_confirmation"
+                               name="password_confirmation"
                                aria-describedby="invalidPasswordConformation">
-                        @error('Password_confirmation')
+                        @error('password_confirmation')
                         <div id="invalidPasswordConformation" class="invalid-feedback" >
                             {{ $message }}
                         </div>
@@ -55,11 +55,11 @@
                     <div class="mb-3">
                         <label for="inputFullName" class="form-label">Ваше имя</label>
                         <input type="Text"
-                               class="form-control @error('FullName') is-invalid @enderror"
+                               class="form-control @error('fullname') is-invalid @enderror"
                                id="inputFullName"
-                               name="FullName"
+                               name="fullname"
                                aria-describedby="invalidFullName">
-                        @error('FullName')
+                        @error('fullname')
                         <div id="invalidFullName" class="invalid-feedback" >
                             {{ $message }}
                         </div>
@@ -68,11 +68,11 @@
                     <div class="mb-3">
                         <label for="inputEmail" class="form-label">Ваш email</label>
                         <input type="Email"
-                               class="form-control @error('Email') is-invalid @enderror"
+                               class="form-control @error('email') is-invalid @enderror"
                                id="inputEmail"
-                               name="Email"
+                               name="email"
                                aria-describedby="invalidEmail">
-                        @error('Email')
+                        @error('email')
                         <div id="invalidEmail" class="invalid-feedback" >
                             {{ $message }}
                         </div>
@@ -81,11 +81,11 @@
                     <div class="mb-3">
                         <label for="inputAge" class="form-label">Ваш возраст</label>
                         <input type="Text"
-                               class="form-control @error('Age') is-invalid @enderror"
+                               class="form-control @error('age') is-invalid @enderror"
                                id="inputAge"
-                               name="Age"
+                               name="age"
                                aria-describedby="invalidAge">
-                        @error('Age')
+                        @error('age')
                         <div id="invalidAge" class="invalid-feedback" >
                             {{ $message }}
                         </div>
@@ -94,11 +94,11 @@
                     <div class="mb-3">
                         <label for="inputAddress" class="form-label">Ваш адрес проживания</label>
                         <input type="Text"
-                               class="form-control @error('Address') is-invalid @enderror"
+                               class="form-control @error('address') is-invalid @enderror"
                                id="inputAddress"
-                               name="Address"
+                               name="address"
                                aria-describedby="invalidAddress">
-                        @error('Address')
+                        @error('address')
                         <div id="invalidAddress" class="invalid-feedback" >
                             {{ $message }}
                         </div>

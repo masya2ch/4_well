@@ -55,10 +55,17 @@ class UserController extends Controller
     public function registerPost(RequestValidationRegister $request)
     {
         $data = $request->validated();
-        $data['Password'] = Hash::make($data['Password']);
+        $data['password'] = Hash::make($data['password']);
 
         User::create($data);
 
         return back()->with(['success' => true]);
+    }
+
+    public function logout(Request $request)
+    {
+        auth()->logout();
+        $request->session()->regenerate();
+        return redirect()->
     }
 }

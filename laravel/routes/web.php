@@ -23,3 +23,7 @@ Route::post('/login', [UserController::class, 'loginPost']);
 
 Route::get('/register', [UserController::class, 'register'])->name('register');
 Route::post('/register', [UserController::class, 'registerPost']);
+
+Route::middleware('auth')->group(function() {
+   Route::get('/static-manager', [MainController::class, 'staticManager'])->name('staticManager');
+});

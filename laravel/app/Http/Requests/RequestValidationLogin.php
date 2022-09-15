@@ -24,8 +24,8 @@ class RequestValidationLogin extends FormRequest
     public function rules()
     {
         return [
-            "Login" => "required",
-            "Password" => "required"
+            "login" => "required",
+            "password" => "required"
         ];
     }
 }

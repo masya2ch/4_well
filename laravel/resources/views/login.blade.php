@@ -16,11 +16,11 @@
                     <div class="mb-3">
                         <label for="inputLogin" class="form-label">Ваш логин</label>
                         <input type="Text"
-                               class="form-control @error('Login') is-invalid @enderror"
+                               class="form-control @error('login') is-invalid @enderror"
                                id="inputLogin"
-                               name="Login"
+                               name="login"
                                aria-describedby="invalidLogin">
-                        @error('Login')
+                        @error('login')
                         <div id="invalidLogin" class="invalid-feedback" >
                             {{ $message }}
                         </div>
@@ -29,11 +29,11 @@
                     <div class="mb-3">
                         <label for="inputPassword" class="form-label">Ваш пароль</label>
                         <input type="Password"
-                               class="form-control @error('Password') is-invalid @enderror"
+                               class="form-control @error('password') is-invalid @enderror"
                                id="inputPassword"
-                               name="Password"
+                               name="password"
                                aria-describedby="invalidPassword">
-                        @error('Password')
+                        @error('password')
                         <div id="invalidPassword" class="invalid-feedback" >
                             {{ $message }}
                         </div>
